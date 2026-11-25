@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 gen.py
-      - run: mkdir _site && cp -r index.html ar about contact online-lessons vocal-coaching singing-lessons voice-training piano-lessons oud-lessons guitar-lessons drums-lessons music-theory music-education international-school-music-teacher music-lessons-for-children music-lessons-for-adults sitemap.xml robots.txt _site/
+      - run: mkdir _site && rsync -a --exclude=.git --exclude=.github --exclude=gen.py --exclude=_site ./ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
