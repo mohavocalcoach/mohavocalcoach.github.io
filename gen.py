@@ -71,11 +71,11 @@ def url(slug,l):
     p=("" if slug=="index" else slug+"/"); return f"{BASE}/{'ar/' if l=='ar' else ''}{p}"
 def page(slug,l):
     if slug=="index":
-        t,h,d="Moha Vocal Coach | Online Singing, Piano, Oud, Guitar and Drum Lessons","Moha Vocal Coach",P["vocal-coaching"][4]
+        t,h,d="Moha Vocal Coach | Online Singing, Piano, Oud, Guitar","Moha Vocal Coach",P["vocal-coaching"][4]
         d="Online vocal coach and music teacher: singing, piano, oud, guitar, drums and music theory, with 10 years of teaching experience."
         body=["Mohamed Nasser has 10 years of teaching singing and instruments, has taught in international schools, and worked as an opera voice coach training singers and artists in Egypt and the Arab world.","All lessons are online and one-to-one, for children and adults, beginner to advanced."]
         if l=="ar":
-            t,h="موها فوكال كوتش | دروس غناء وبيانو وعود وجيتار ودرامز أونلاين","موها فوكال كوتش"
+            t,h="موها فوكال كوتش | دروس غناء وبيانو وعود وجيتار أونلاين","موها فوكال كوتش"
             d="مدرب صوت ومدرس موسيقى أونلاين: غناء وبيانو وعود وجيتار ودرامز ونظرية موسيقية بخبرة 10 سنوات."
             body=["لدى محمد ناصر 10 سنوات في تدريس الغناء والآلات، ودرّس في مدارس دولية، وعمل كمدرب صوت أوبرالي لتدريب مغنين وفنانين في مصر والعالم العربي.","كل الدروس أونلاين وفردية للأطفال والكبار من المبتدئ إلى المتقدم."]
     else:
@@ -93,7 +93,7 @@ def page(slug,l):
     ps="".join(f"<p>{html.escape(x)}</p>" for x in body)
     home_link=f'<p><a href="{url("contact",l)}">{"احجز درساً" if ar else "Book a lesson"}</a></p>'
     lst=f'<h2>{"الخدمات" if ar else "Lessons"}</h2><ul>{svc}</ul>' if slug in("index","online-lessons") else ""
-    return f'''<!DOCTYPE html><html lang="{l}" dir="{'rtl' if ar else 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(t)}</title><meta name="description" content="{html.escape(d)}"><link rel="canonical" href="{url(slug,l)}"><link rel="alternate" hreflang="en" href="{url(slug,'en')}"><link rel="alternate" hreflang="ar" href="{url(slug,'ar')}"><link rel="alternate" hreflang="x-default" href="{url(slug,'en')}"><meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(d)}"><meta property="og:type" content="website"><meta property="og:url" content="{url(slug,l)}"><!--GSC_VERIFICATION--><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script><style>body{{font-family:system-ui,sans-serif;max-width:46rem;margin:auto;padding:1rem;line-height:1.6}}nav a{{margin-inline-end:1rem}}</style></head><body><header><a href="{url('index',l)}"><strong>{"موها فوكال كوتش" if ar else BRAND}</strong></a> <nav>{nav}<a href="{other}">{"English" if ar else "العربية"}</a></nav></header><main><h1>{html.escape(h)}</h1>{ps}{home_link}{lst}</main><footer><p>{EMAIL} | <a href="{SAME[0]}">Instagram</a> | <a href="{SAME[1]}">TikTok</a> | <a href="{SAME[2]}">Facebook</a></p></footer></body></html>'''
+    return f'''<!DOCTYPE html><html lang="{l}" dir="{'rtl' if ar else 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(t)}</title><meta name="description" content="{html.escape(d)}"><link rel="canonical" href="{url(slug,l)}"><link rel="alternate" hreflang="en" href="{url(slug,'en')}"><link rel="alternate" hreflang="ar" href="{url(slug,'ar')}"><link rel="alternate" hreflang="x-default" href="{url(slug,'en')}"><meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(d)}"><meta property="og:type" content="website"><meta property="og:url" content="{url(slug,l)}"><meta name="google-site-verification" content="sDAZ7iyrpQMqOidXQUyYy06PUCxTk1MjHHnBAAGbfaQ" /><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script><style>body{{font-family:system-ui,sans-serif;max-width:46rem;margin:auto;padding:1rem;line-height:1.6}}nav a{{margin-inline-end:1rem}}</style></head><body><header><a href="{url('index',l)}"><strong>{"موها فوكال كوتش" if ar else BRAND}</strong></a> <nav>{nav}<a href="{other}">{"English" if ar else "العربية"}</a></nav></header><main><h1>{html.escape(h)}</h1>{ps}{home_link}{lst}</main><footer><p>{EMAIL} | <a href="{SAME[0]}">Instagram</a> | <a href="{SAME[1]}">TikTok</a> | <a href="{SAME[2]}">Facebook</a></p></footer></body></html>'''
 slugs=["index"]+list(P)
 urls=[]
 for l in("en","ar"):
