@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 gen.py
+      - run: pip install pillow && python3 gen.py
       - run: mkdir _site && rsync -a --exclude=.git --exclude=.github --exclude=gen.py --exclude=_site ./ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
