@@ -106,7 +106,7 @@ ART={
 }
 P.update(GEO); P.update(ART)
 SERVICES=[s for s in P if s not in("about","contact") and s not in GEO and s not in ART]
-SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/"]
+SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/","https://mohavocalcoach.carrd.co"]
 def url(slug,l): 
     p=("" if slug=="index" else slug+"/"); return f"{BASE}/{'ar/' if l=='ar' else ''}{p}"
 def page(slug,l):
