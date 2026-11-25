@@ -65,7 +65,47 @@ P={
  ["To book a lesson, email "+EMAIL+" with the subject you want (singing, piano, oud, guitar, drums or theory), your level and your country.","Lessons are available every day, online."],
  ["لحجز درس راسل "+EMAIL+" واذكر المادة (غناء أو بيانو أو عود أو جيتار أو درامز أو نظرية) ومستواك وبلدك.","الدروس متاحة كل يوم أونلاين."]),
 }
-SERVICES=[s for s in P if s not in("about","contact")]
+def _geo(slug,en_c,ar_c,price_en,price_ar):
+    return (f"Online Music Lessons in {en_c}",f"دروس موسيقى أونلاين في {ar_c}",f"Online singing and music lessons for students in {en_c}",f"دروس غناء وموسيقى أونلاين للطلاب في {ar_c}",
+     f"Online singing, piano, oud and guitar lessons for students in {en_c}, with a teacher who has 10 years of experience.",f"دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في {ar_c} مع مدرس بخبرة 10 سنوات.",
+     [f"Students in {en_c} can take one-to-one music lessons with Mohamed Nasser over video call. Lessons are online only: there is no studio or branch in {en_c}.",
+      "Subjects: vocal coaching and singing, piano, oud, guitar, drums and music theory, for children and adults, beginner to advanced.",
+      price_en,"To book, email "+EMAIL+" with the subject, your level and your country."],
+     [f"يمكن للطلاب في {ar_c} أخذ دروس موسيقى فردية مع محمد ناصر عبر مكالمة فيديو. الدروس أونلاين فقط، ولا يوجد استوديو أو فرع في {ar_c}.",
+      "المواد: تدريب صوتي وغناء وبيانو وعود وجيتار ودرامز ونظرية موسيقية، للأطفال والكبار من المبتدئ إلى المتقدم.",
+      price_ar,"للحجز راسل "+EMAIL+" واذكر المادة ومستواك وبلدك."])
+_pe="Price: 600 EGP per hour."; _pa="السعر: 600 جنيه للساعة."
+_ge="Gulf price: from 50 AED or SAR per hour."; _ga="سعر الخليج: من 50 درهماً أو ريالاً للساعة."
+_ie="International price: from $20 per hour."; _ia="السعر الدولي: من 20 دولاراً للساعة."
+GEO={
+"online-music-lessons-egypt":_geo("","Egypt","مصر",_pe,_pa),
+"online-music-lessons-saudi-arabia":_geo("","Saudi Arabia","السعودية",_ge,_ga),
+"online-music-lessons-uae":_geo("","the UAE","الإمارات",_ge,_ga),
+"online-music-lessons-kuwait":_geo("","Kuwait","الكويت",_ge,_ga),
+"online-music-lessons-qatar":_geo("","Qatar","قطر",_ge,_ga),
+"online-music-lessons-uk":_geo("","the UK","بريطانيا",_ie,_ia),
+"online-music-lessons-usa":_geo("","the USA","أمريكا",_ie,_ia),
+}
+ART={
+"how-to-warm-up-your-voice":("How to Warm Up Your Voice Before Singing","كيف تسخّن صوتك قبل الغناء","How to warm up your voice before singing","كيف تسخّن صوتك قبل الغناء",
+ "A simple vocal warm-up routine: breathing, lip trills, humming and gentle scales before you sing.","روتين بسيط لتسخين الصوت: التنفس وتمرين الشفاه والهمهمة والسلالم الخفيفة قبل الغناء.",
+ ["A warm-up prepares your voice the way stretching prepares a body. Five to ten minutes is enough for most singers.","Start with slow breathing: breathe in through the nose for four counts and out on a soft hiss for eight. Then hum gently on a comfortable pitch and slide up and down.","Add lip trills or a relaxed 'brrr' on easy scales, then sing a few simple vowels (ah, eh, oh). Stop if you feel pain or strain.","A teacher can check your breathing and posture and adapt the routine to your voice. Book a lesson by email."],
+ ["التسخين يجهّز صوتك كما يجهّز التمدد الجسم. خمس إلى عشر دقائق تكفي لمعظم المغنين.","ابدأ بتنفس بطيء: شهيق من الأنف لأربع عدّات وزفير بصوت هسهسة هادئ لثماني عدّات. ثم همهم بهدوء على نغمة مريحة واصعد وانزل بالصوت.","أضف تمرين الشفاه أو 'برر' مسترخية على سلالم سهلة، ثم غنِّ حروف علة بسيطة (آ، إي، أو). توقف إذا شعرت بألم أو شد.","يستطيع المدرس مراجعة تنفسك ووضعية جسمك وتعديل الروتين حسب صوتك. احجز درساً عبر البريد."]),
+"how-to-choose-an-online-singing-teacher":("How to Choose an Online Singing Teacher","كيف تختار مدرس غناء أونلاين","How to choose an online singing teacher","كيف تختار مدرس غناء أونلاين",
+ "What to look for in an online singing teacher: experience, lesson format, goals and a clear first lesson.","ما الذي تبحث عنه في مدرس الغناء أونلاين: الخبرة وشكل الدرس والأهداف وبداية واضحة.",
+ ["Look for real teaching experience and clear information about who the teacher is and what they have done.","Check that lessons are one-to-one, that the teacher listens to your goals, and that you get specific feedback after each exercise.","Ask what equipment you need. A phone or laptop, a quiet room and a stable internet connection are enough to start.","Mohamed Nasser has 10 years of teaching experience and has worked as an opera voice coach. Email "+EMAIL+" to ask about a first lesson."],
+ ["ابحث عن خبرة تدريس حقيقية ومعلومات واضحة عن المدرس وما عمله.","تأكد أن الدروس فردية وأن المدرس يستمع لأهدافك وأنك تحصل على ملاحظات محددة بعد كل تمرين.","اسأل عن الأدوات المطلوبة. يكفي هاتف أو لابتوب وغرفة هادئة واتصال إنترنت ثابت للبدء.","لدى محمد ناصر 10 سنوات من خبرة التدريس وعمل كمدرب صوت أوبرالي. راسل "+EMAIL+" للسؤال عن الدرس الأول."]),
+"learn-piano-online-for-beginners":("Learn Piano Online: A Beginner's Guide","تعلم البيانو أونلاين: دليل للمبتدئين","Learn piano online: a beginner's guide","تعلم البيانو أونلاين: دليل للمبتدئين",
+ "How to start learning piano online: posture, finger numbers, reading notes and short daily practice.","كيف تبدأ تعلم البيانو أونلاين: وضعية الجلوس وأرقام الأصابع وقراءة النوتة وتمرين يومي قصير.",
+ ["You can start piano with a keyboard at home. A keyboard with full-size keys is better than a toy one, but any keyboard works for the first weeks.","Learn the basics first: sit with a straight back, keep wrists relaxed, number your fingers 1 to 5, and find middle C.","Practice 15 to 20 minutes a day instead of one long session a week. Short, regular practice builds skill faster.","A teacher watching over video can correct hand position early, before bad habits form."],
+ ["يمكنك بدء البيانو بكيبورد في البيت. الكيبورد بمفاتيح كاملة أفضل من الألعاب، لكن أي كيبورد يصلح للأسابيع الأولى.","تعلّم الأساسيات أولاً: اجلس بظهر مستقيم وأرخِ المعصمين ورقّم الأصابع من 1 إلى 5 وجد نغمة دو الوسطى.","تمرّن 15 إلى 20 دقيقة يومياً بدل جلسة طويلة واحدة أسبوعياً. التمرين القصير المنتظم يبني المهارة أسرع.","مدرس يراقبك بالفيديو يصحح وضعية اليد مبكراً قبل أن تتكوّن عادات خاطئة."]),
+"oud-for-beginners":("Oud for Beginners: Getting Started","العود للمبتدئين: كيف تبدأ","Oud for beginners: getting started","العود للمبتدئين: كيف تبدأ",
+ "Starting the oud: holding the instrument, using the right hand, tuning basics and first maqam practice.","بداية العزف على العود: مسكة الآلة وحركة اليد اليمنى وأساسيات الدوزان وأول تمارين المقامات.",
+ ["The oud is a fretless string instrument, so ear training matters from the first lesson.","Learn how to hold the oud comfortably, how to use the plectrum (risha) with a relaxed right hand, and how to tune the strings.","Begin with simple exercises on one string, then move to short phrases in common maqams such as Rast and Hijaz.","Online lessons work well for oud: the teacher can see your hand position on camera and play the example for you to repeat."],
+ ["العود آلة وترية بلا دسانين، لذلك تدريب الأذن مهم من أول درس.","تعلّم كيف تمسك العود بارتياح وكيف تستخدم الريشة بيد يمنى مسترخية وكيف تدوزن الأوتار.","ابدأ بتمارين بسيطة على وتر واحد ثم انتقل لجمل قصيرة في مقامات شائعة مثل الراست والحجاز.","الدروس أونلاين مناسبة للعود: يرى المدرس وضع يدك بالكاميرا ويعزف المثال لتكرره."]),
+}
+P.update(GEO); P.update(ART)
+SERVICES=[s for s in P if s not in("about","contact") and s not in GEO and s not in ART]
 SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/"]
 def url(slug,l): 
     p=("" if slug=="index" else slug+"/"); return f"{BASE}/{'ar/' if l=='ar' else ''}{p}"
@@ -93,6 +133,9 @@ def page(slug,l):
     ps="".join(f"<p>{html.escape(x)}</p>" for x in body)
     home_link=f'<p><a href="{url("contact",l)}">{"احجز درساً" if ar else "Book a lesson"}</a></p>'
     lst=f'<h2>{"الخدمات" if ar else "Lessons"}</h2><ul>{svc}</ul>' if slug in("index","online-lessons") else ""
+    if slug in("index","online-lessons"):
+        lst+=f'<h2>{"دروس حسب البلد" if ar else "Lessons by country (online)"}</h2><ul>'+"".join(f'<li><a href="{url(s,l)}">{P[s][1 if ar else 0]}</a></li>' for s in GEO)+f'</ul><h2>{"مقالات" if ar else "Guides"}</h2><ul>'+"".join(f'<li><a href="{url(s,l)}">{P[s][1 if ar else 0]}</a></li>' for s in ART)+'</ul>'
+
     return f'''<!DOCTYPE html><html lang="{l}" dir="{'rtl' if ar else 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(t)}</title><meta name="description" content="{html.escape(d)}"><link rel="canonical" href="{url(slug,l)}"><link rel="alternate" hreflang="en" href="{url(slug,'en')}"><link rel="alternate" hreflang="ar" href="{url(slug,'ar')}"><link rel="alternate" hreflang="x-default" href="{url(slug,'en')}"><meta property="og:title" content="{html.escape(t)}"><meta property="og:description" content="{html.escape(d)}"><meta property="og:type" content="website"><meta property="og:url" content="{url(slug,l)}"><meta name="google-site-verification" content="sDAZ7iyrpQMqOidXQUyYy06PUCxTk1MjHHnBAAGbfaQ" /><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script><style>body{{font-family:system-ui,sans-serif;max-width:46rem;margin:auto;padding:1rem;line-height:1.6}}nav a{{margin-inline-end:1rem}}</style></head><body><header><a href="{url('index',l)}"><strong>{"موها فوكال كوتش" if ar else BRAND}</strong></a> <nav>{nav}<a href="{other}">{"English" if ar else "العربية"}</a></nav></header><main><h1>{html.escape(h)}</h1>{ps}{home_link}{lst}</main><footer><p>{EMAIL} | <a href="{SAME[0]}">Instagram</a> | <a href="{SAME[1]}">TikTok</a> | <a href="{SAME[2]}">Facebook</a></p></footer></body></html>'''
 slugs=["index"]+list(P)
 urls=[]
