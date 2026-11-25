@@ -113,11 +113,11 @@ def page(slug,l):
     if slug=="index":
         t,h,d="Moha Vocal Coach | Online Singing, Piano, Oud, Guitar","Moha Vocal Coach",P["vocal-coaching"][4]
         d="Online vocal coach and music teacher: singing, piano, oud, guitar, drums and music theory, with 10 years of teaching experience."
-        body=["Mohamed Nasser has 10 years of teaching singing and instruments, has taught in international schools, and worked as an opera voice coach training singers and artists in Egypt and the Arab world.","All lessons are online and one-to-one, for children and adults, beginner to advanced."]
+        body=["Mohamed Nasser has 10 years of teaching singing and instruments, has taught in international schools, and worked as an opera voice coach training singers and artists in Egypt and the Arab world.","All lessons are online and one-to-one, for children and adults, beginner to advanced.","Mohamed Nasser is also known by his teaching name, Moha Vocal Coach: vocal coach, oud teacher and piano teacher online."]
         if l=="ar":
             t,h="موها فوكال كوتش | دروس غناء وبيانو وعود وجيتار أونلاين","موها فوكال كوتش"
             d="مدرب صوت ومدرس موسيقى أونلاين: غناء وبيانو وعود وجيتار ودرامز ونظرية موسيقية بخبرة 10 سنوات."
-            body=["لدى محمد ناصر 10 سنوات في تدريس الغناء والآلات، ودرّس في مدارس دولية، وعمل كمدرب صوت أوبرالي لتدريب مغنين وفنانين في مصر والعالم العربي.","كل الدروس أونلاين وفردية للأطفال والكبار من المبتدئ إلى المتقدم."]
+            body=["لدى محمد ناصر 10 سنوات في تدريس الغناء والآلات، ودرّس في مدارس دولية، وعمل كمدرب صوت أوبرالي لتدريب مغنين وفنانين في مصر والعالم العربي.","كل الدروس أونلاين وفردية للأطفال والكبار من المبتدئ إلى المتقدم.","محمد ناصر معروف أيضاً باسمه التدريسي موها فوكال كوتش: مدرب صوت ومدرس عود وبيانو أونلاين."]
     else:
         e=P[slug]; i=1 if l=="ar" else 0
         t=e[i]+(" | "+("موها فوكال كوتش" if l=="ar" else BRAND)); h=e[2+i]; d=e[4+i]; body=e[6+i]
@@ -126,7 +126,7 @@ def page(slug,l):
     svc="".join(f'<li><a href="{url(s,l)}">{P[s][1 if ar else 0]}</a></li>' for s in SERVICES)
     other=url(slug,"ar" if l=="en" else "en")
     schema={"@context":"https://schema.org","@graph":[
-     {"@type":"Person","@id":BASE+"/#person","name":NAME,"jobTitle":"Vocal Coach and Music Teacher","url":BASE+"/","sameAs":SAME,"email":EMAIL,"alumniOf":{"@type":"CollegeOrUniversity","name":"Faculty of Music Education"}},
+     {"@type":"Person","@id":BASE+"/#person","name":NAME,"alternateName":["Moha Vocal Coach","محمد ناصر","موها فوكال كوتش"],"jobTitle":"Vocal Coach and Music Teacher","url":BASE+"/","sameAs":SAME,"email":EMAIL,"alumniOf":{"@type":"CollegeOrUniversity","name":"Faculty of Music Education"}},
      {"@type":"WebPage","@id":url(slug,l),"name":t,"description":d,"inLanguage":l,"about":{"@id":BASE+"/#person"}}]}
     if slug in SERVICES:
         schema["@graph"].append({"@type":"Service","name":h,"description":d,"provider":{"@id":BASE+"/#person"},"serviceType":h,"areaServed":"Worldwide (online)","availableChannel":{"@type":"ServiceChannel","serviceUrl":url("contact",l)}})
