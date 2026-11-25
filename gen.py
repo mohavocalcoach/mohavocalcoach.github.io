@@ -143,8 +143,15 @@ P["online-singing-lessons"]=("Online Singing Lessons","دروس غناء أون�
 P["blog"]=("Guides and Articles","مقالات وأدلة","Music learning guides","أدلة تعلم الموسيقى",
  "Practical guides on singing, piano, guitar and oud from a vocal coach and music teacher with 10 years of experience.","أدلة عملية عن الغناء والبيانو والجيتار والعود من مدرب صوت ومدرس موسيقى بخبرة 10 سنوات.",
  ["Short, practical guides for students and parents, written by Mohamed Nasser."],["أدلة قصيرة وعملية للطلاب وأولياء الأمور بقلم محمد ناصر."])
+P["faq"]=("FAQ: Online Music Lessons","أسئلة شائعة عن دروس الموسيقى أونلاين","Frequently asked questions","أسئلة شائعة",
+ "Answers about online singing, piano, oud and guitar lessons with Mohamed Nasser: subjects, prices, booking and who the lessons suit.","إجابات عن دروس الغناء والبيانو والعود والجيتار أونلاين مع محمد ناصر: المواد والأسعار والحجز ولمن تناسب.",
+ ["Common questions from students and parents about lessons with Mohamed Nasser (Moha Vocal Coach)."],["أسئلة شائعة من الطلاب وأولياء الأمور عن الدروس مع محمد ناصر (موها فوكال كوتش)."])
+P["testimonials"]=("Student Feedback","آراء الطلاب","Student feedback","آراء الطلاب",
+ "Share your feedback about lessons with Mohamed Nasser (Moha Vocal Coach). Honest feedback only.","شارك رأيك عن الدروس مع محمد ناصر (موها فوكال كوتش). آراء صادقة فقط.",
+ ["No public reviews are published on this site yet. We only show real feedback from real students.","If you have studied with Mohamed Nasser, you are welcome to send honest feedback to "+EMAIL+". With your written permission, selected feedback may be shown here with your name or initials.","Parents can send feedback on behalf of children."],
+ ["لا توجد آراء منشورة على هذا الموقع حتى الآن. نعرض فقط آراء حقيقية من طلاب حقيقيين.","إذا درست مع محمد ناصر يسعدنا أن ترسل رأيك الصادق إلى "+EMAIL+". وبموافقتك المكتوبة قد يظهر جزء من رأيك هنا باسمك أو بالأحرف الأولى.","يمكن لأولياء الأمور إرسال الرأي نيابة عن أطفالهم."])
 P.update(GEO); P.update(ART)
-SERVICES=[s for s in P if s not in("about","contact","blog") and s not in GEO and s not in ART]
+SERVICES=[s for s in P if s not in("about","contact","blog","faq","testimonials") and s not in GEO and s not in ART]
 SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/","https://mohavocalcoach.carrd.co"]
 def url(slug,l): 
     p=("" if slug=="index" else slug+"/"); return f"{BASE}/{'ar/' if l=='ar' else ''}{p}"
@@ -189,7 +196,7 @@ def page(slug,l):
         "online-music-lessons-uae":("What currency is the rate in?","The Gulf rate is 50 AED per hour for students in the UAE.","بأي عملة السعر؟","سعر الخليج 50 درهماً للساعة للطلاب في الإمارات."),
         "online-music-lessons-worldwide":("What if I live in Kuwait, Qatar, the UK or the USA?","Lessons are online, so you can book from anywhere. The international rate is $20 per hour. Email to confirm the rate in your currency.","ماذا لو كنت في الكويت أو قطر أو بريطانيا أو أمريكا؟","الدروس أونلاين فيمكنك الحجز من أي مكان. السعر الدولي 20 دولاراً للساعة. راسلنا لتأكيد السعر بعملتك.")}
     if slug in RF: FAQ=FAQ+[(RF[slug][2],RF[slug][3])] if ar else FAQ+[(RF[slug][0],RF[slug][1])]
-    show_faq = not is_art and slug not in ("blog","contact")
+    show_faq = not is_art and slug not in ("blog","contact","testimonials")
     LBL=dict(book="احجز درساً" if ar else "Book a lesson", wa="واتساب" if ar else "WhatsApp", home="الرئيسية" if ar else "Home",
              lessons="الدروس" if ar else "Lessons", blog="المقالات" if ar else "Guides", about="عن محمد" if ar else "About", contact="التواصل" if ar else "Contact",
              faq="أسئلة شائعة" if ar else "Frequently asked questions", method="منهج التدريس" if ar else "Teaching approach",
@@ -243,7 +250,7 @@ def page(slug,l):
     else:
         top=f'<main id="main" class="w">{bc_html}<h1>{html.escape(h)}</h1>{ps}{cta}{extra_html}{faq_html}</main>'
     wab=f'<a class="wafab" href="https://wa.me/{WA}" aria-label="WhatsApp">{LBL["wa"]}</a>' if WA else ""
-    foot=wab+f'<footer><div class="w"><p>{brand} | <a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a href="{SAME[0]}" rel="me">Instagram</a> | <a href="{SAME[1]}" rel="me">TikTok</a> | <a href="{SAME[2]}" rel="me">Facebook</a></p></div></footer></body></html>'
+    foot=wab+f'<footer><div class="w"><p>{brand} | <a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a href="{url("faq",l)}">{LBL["faq"]}</a> | <a href="{url("testimonials",l)}">{"آراء الطلاب" if ar else "Student feedback"}</a></p><p><a href="{SAME[0]}" rel="me">Instagram</a> | <a href="{SAME[1]}" rel="me">TikTok</a> | <a href="{SAME[2]}" rel="me">Facebook</a></p></div></footer></body></html>'
     return head+hdr+top+foot
 def stub(slug,l):
     tgt=url(REDIR[slug],l); me=url(slug,l)
@@ -276,3 +283,5 @@ try:
     dr.text((100,470),"mohavocalcoach.github.io",font=F(30),fill=(243,230,191))
     im.save("og-card.png",optimize=True); print("og-card ok")
 except Exception as e: print("og-card skipped",e)
+
+open("404.html","w",encoding="utf-8").write(f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | {BRAND}</title><meta name="robots" content="noindex"><style>body{{font-family:system-ui,sans-serif;background:#12182b;color:#f3e6bf;text-align:center;padding:4rem 1rem}}a{{color:#c9a227}}</style></head><body><h1>Page not found / الصفحة غير موجودة</h1><p><a href="{BASE}/">Home</a> | <a href="{BASE}/online-lessons/">Lessons</a> | <a href="{BASE}/blog/">Guides</a> | <a href="{BASE}/ar/">العربية</a></p></body></html>')
