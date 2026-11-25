@@ -352,6 +352,11 @@ def page(slug,l):
         _ar_tr="بصراحة، استمتعت بكل درس صوت مع محمد. هو ودود جداً وصبور ويشعرك دائماً بالراحة حتى عندما تخطئ. تعلمت كثيراً وأشعر الآن بثقة أكبر بكثير في صوتي. شكراً لك يا مستر محمد، أنت الأفضل."
         extra_html+='<blockquote lang="en" dir="ltr" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_en+'<cite style="display:block;margin-top:.5rem;font-size:.85em;opacity:.8;font-style:normal">'+("باسكال، إنجلترا" if ar else "Pascal, England")+'</cite></blockquote>'
         if ar: extra_html+='<p><em>ترجمة إلى العربية: '+_ar_tr+'</em></p>'
+    if slug=="testimonials":
+        _en2="I really enjoy my piano and singing lessons with Moha<br>I’ve learned so much since I started with him, and I can honestly hear the difference in my voice. I never thought I’d be singing opera, but here I am! So thankful for all his help and encouragement. You’re the best, Moha! ❤️"
+        _ar_tr2="أستمتع حقاً بدروس البيانو والغناء مع موها. تعلمت الكثير منذ بدأت معه، وأستطيع بصدق أن أسمع الفرق في صوتي. لم أكن أتخيل أنني سأغني الأوبرا، لكنني هنا الآن! ممتنة جداً لكل مساعدته وتشجيعه. أنت الأفضل يا موها!"
+        extra_html+='<blockquote lang="en" dir="ltr" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_en2+'<cite style="display:block;margin-top:.5rem;font-size:.85em;opacity:.8;font-style:normal">'+("إيميلي، أمريكا" if ar else "Emily, USA")+'</cite></blockquote>'
+        if ar: extra_html+='<p><em>ترجمة إلى العربية: '+_ar_tr2+'</em></p>'
     if slug=="blog": extra_html+=lst_(ART)
     if slug in SERVICES and slug not in("index",):
         rel=[k for k in ART][:3]; extra_html+=f'<h2>{LBL["more"]}</h2>'+lst_(rel)
