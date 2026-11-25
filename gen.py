@@ -264,7 +264,12 @@ ART["set-up-for-online-music-lessons"]=("How to Set Up for Online Music Lessons"
 INK="7d7892c313eff9a71a2a4b558004188e"
 P.update(GEO); P.update(ART)
 SERVICES=[s for s in P if s not in("about","contact","blog","faq","testimonials") and s not in GEO and s not in ART]
-SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/","https://mohavocalcoach.carrd.co"]
+SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/","https://mohavocalcoach.carrd.co",
+ "https://www.apprentus.com/en-us/private-lessons/online/music/singing/professional-vocal-coaching-singing-online","https://www.teacheron.com/tutor/f9BN","https://wantatutor.com/tutors/mohamed-nasser-2","https://tutorping.com/t/moha-vocal-coach","https://pluscourse.com/ar/profile/581-mohamed-nasser","https://profile.musicteacher.com/profile/mohavocalcoach/","https://contra.com/mohamed_nasser_95yfbfi7/work","https://www.freelancer.com/u/MohaVocalCoachEG"]
+PROFHTML=""
+PROFLBL={True:"ملفاتي على المنصات",False:"Also find me on"}
+PROF=[("Apprentus",SAME[4]),("TeacherOn",SAME[5]),("WantATutor",SAME[6]),("TutorPing",SAME[7]),("Pluscourse",SAME[8]),("MusicTeacher.com",SAME[9]),("Contra",SAME[10]),("Freelancer",SAME[11]),("Carrd",SAME[3])]
+PROFHTML=" | ".join('<a href="%s" rel="me noopener">%s</a>'%(u,n) for n,u in PROF)
 def url(slug,l): 
     p=("" if slug=="index" else slug+"/"); return f"{BASE}/{'ar/' if l=='ar' else ''}{p}"
 def page(slug,l):
@@ -364,7 +369,7 @@ def page(slug,l):
     else:
         top=f'<main id="main" class="w">{bc_html}<h1>{html.escape(h)}</h1>{ps}{cta}{fig(SLUGIMG[slug],ar) if slug in SLUGIMG else ""}{extra_html}{faq_html}</main>'
     wab=f'<a class="wafab" href="https://wa.me/{WA}" aria-label="WhatsApp">{LBL["wa"]}</a>' if WA else ""
-    foot=wab+f'<footer><div class="w"><p>{brand} | <a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a href="{url("faq",l)}">{LBL["faq"]}</a> | <a href="{url("testimonials",l)}">{"آراء الطلاب" if ar else "Student feedback"}</a></p><p><a href="{SAME[0]}" rel="me">Instagram</a> | <a href="{SAME[1]}" rel="me">TikTok</a> | <a href="{SAME[2]}" rel="me">Facebook</a></p><p style="font-size:.8em;opacity:.75">{"يستخدم هذا الموقع Google Analytics لعدّ الزيارات بشكل مجهول." if ar else "This site uses Google Analytics to count visits anonymously."}</p></div></footer></body></html>'
+    foot=wab+f'<footer><div class="w"><p>{brand} | <a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a href="{url("faq",l)}">{LBL["faq"]}</a> | <a href="{url("testimonials",l)}">{"آراء الطلاب" if ar else "Student feedback"}</a></p><p><a href="{SAME[0]}" rel="me">Instagram</a> | <a href="{SAME[1]}" rel="me">TikTok</a> | <a href="{SAME[2]}" rel="me">Facebook</a></p><p style="font-size:.85em">{PROFLBL[ar]}: {PROFHTML}</p><p style="font-size:.8em;opacity:.75">{"يستخدم هذا الموقع Google Analytics لعدّ الزيارات بشكل مجهول." if ar else "This site uses Google Analytics to count visits anonymously."}</p></div></footer></body></html>'
     return head+hdr+top+foot
 def stub(slug,l):
     tgt=url(REDIR[slug],l); me=url(slug,l)
