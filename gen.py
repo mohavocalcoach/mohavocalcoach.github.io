@@ -259,12 +259,12 @@ def page(slug,l):
     if slug=="index":
         stats=("<li><b>10</b> سنوات خبرة</li><li><b>1:1</b> دروس فردية أونلاين</li><li><b>6</b> مواد موسيقية</li>" if ar else "<li><b>10</b> years teaching</li><li><b>1:1</b> online lessons</li><li><b>6</b> subjects</li>")
         wave='<svg class="wave" aria-hidden="true" viewBox="0 0 120 40" width="120" height="40">'+"".join(f'<rect x="{n*8+4}" y="{20-v}" width="4" height="{2*v}" rx="2"/>' for n,v in enumerate([4,9,14,8,17,11,6,15,19,10,5,13,8,3]))+'</svg>'
-        gal='<div class="gal">'+"".join(fig(x,ar) for x in("piano","oud","guitar","violin"))+'</div><p class="note">'+("صور مجانية للتوضيح فقط، وليست صور المدرّس أو طلابه." if ar else "Free stock photos for illustration only. They are not photos of the teacher or his students.")+'</p>'
+        gal='<div class="gal">'+"".join(fig(x,ar) for x in("piano","oud","guitar","violin"))+'</div>'
         top=f'<section class="hero"><div class="w">{wave}<p class="eyebrow">{"مدرب صوت ومدرس موسيقى" if ar else "Vocal coach and music teacher"}</p><h1>{html.escape(h)}</h1>{ps}{cta}<ul class="stats">{stats}</ul></div></section><main id="main" class="w">{gal}{extra_html}{faq_html}</main>'
     else:
         top=f'<main id="main" class="w">{bc_html}<h1>{html.escape(h)}</h1>{ps}{cta}{fig(SLUGIMG[slug],ar) if slug in SLUGIMG else ""}{extra_html}{faq_html}</main>'
     wab=f'<a class="wafab" href="https://wa.me/{WA}" aria-label="WhatsApp">{LBL["wa"]}</a>' if WA else ""
-    foot=wab+f'<footer><div class="w"><p>{brand} | <a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a href="{url("faq",l)}">{LBL["faq"]}</a> | <a href="{url("testimonials",l)}">{"آراء الطلاب" if ar else "Student feedback"}</a></p><p><a href="{SAME[0]}" rel="me">Instagram</a> | <a href="{SAME[1]}" rel="me">TikTok</a> | <a href="{SAME[2]}" rel="me">Facebook</a></p><p style="font-size:.8em;opacity:.75">{"يستخدم هذا الموقع Google Analytics لعدّ الزيارات بشكل مجهول." if ar else "This site uses Google Analytics to count visits anonymously."} {"الصور مجانية (CC0) للتوضيح." if ar else "Images are free CC0 stock photos, for illustration."}</p></div></footer></body></html>'
+    foot=wab+f'<footer><div class="w"><p>{brand} | <a href="mailto:{EMAIL}">{EMAIL}</a></p><p><a href="{url("faq",l)}">{LBL["faq"]}</a> | <a href="{url("testimonials",l)}">{"آراء الطلاب" if ar else "Student feedback"}</a></p><p><a href="{SAME[0]}" rel="me">Instagram</a> | <a href="{SAME[1]}" rel="me">TikTok</a> | <a href="{SAME[2]}" rel="me">Facebook</a></p><p style="font-size:.8em;opacity:.75">{"يستخدم هذا الموقع Google Analytics لعدّ الزيارات بشكل مجهول." if ar else "This site uses Google Analytics to count visits anonymously."}</p></div></footer></body></html>'
     return head+hdr+top+foot
 def stub(slug,l):
     tgt=url(REDIR[slug],l); me=url(slug,l)
