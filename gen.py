@@ -343,7 +343,7 @@ def page(slug,l):
     if slug=="testimonials":
         _rv="مستر محمد بجد جامد جداً ❤️<br>أنا مكنتش متوقعة إني أتحسن بالشكل ده في الغناء، وطريقته في الشرح مريحة جداً وشاطر اوي وصاحبي جدا دلوقتي<br>وأحلى حاجة إنه بيقولك إيه غلط وازاي تصلحه في ثواني<br>بجد احلى مستر في الدنيا 🤩"
         _tr="Mister Mohamed is really great. I did not expect to improve this much in singing. His way of explaining is very comfortable, he is very good, and he is a real friend now. The best part is that he tells you what is wrong and how to fix it in seconds. Honestly the best teacher in the world."
-        extra_html+='<blockquote lang="ar" dir="rtl" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_rv+'<footer style="margin-top:.5rem;font-size:.85em;opacity:.8">'+("أميرة، مصر" if ar else "Amira, Egypt")+'</footer></blockquote>'
+        extra_html+='<blockquote lang="ar" dir="rtl" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_rv+'<cite style="display:block;margin-top:.5rem;font-size:.85em;opacity:.8;font-style:normal">'+("أميرة، مصر" if ar else "Amira, Egypt")+'</cite></blockquote>'
         if not ar: extra_html+='<p><em>English translation: '+html.escape(_tr)+'</em></p>'
     if slug=="blog": extra_html+=lst_(ART)
     if slug in SERVICES and slug not in("index",):
