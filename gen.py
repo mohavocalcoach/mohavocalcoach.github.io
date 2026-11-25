@@ -246,8 +246,8 @@ P["faq"]=("FAQ: Online Music Lessons","أسئلة شائعة عن دروس ال�
  ["Common questions from students and parents about lessons with Mohamed Nasser (Moha Vocal Coach)."],["أسئلة شائعة من الطلاب وأولياء الأمور عن الدروس مع محمد ناصر (موها فوكال كوتش)."])
 P["testimonials"]=("Student Feedback","آراء الطلاب","Student feedback","آراء الطلاب",
  "Share your feedback about lessons with Mohamed Nasser (Moha Vocal Coach). Honest feedback only.","شارك رأيك عن الدروس مع محمد ناصر (موها فوكال كوتش). آراء صادقة فقط.",
- ["No public reviews are published on this site yet. We only show real feedback from real students.","If you have studied with Mohamed Nasser, you are welcome to send honest feedback to "+EMAIL+". With your written permission, selected feedback may be shown here with your name or initials.","Parents can send feedback on behalf of children."],
- ["لا توجد آراء منشورة على هذا الموقع حتى الآن. نعرض فقط آراء حقيقية من طلاب حقيقيين.","إذا درست مع محمد ناصر يسعدنا أن ترسل رأيك الصادق إلى "+EMAIL+". وبموافقتك المكتوبة قد يظهر جزء من رأيك هنا باسمك أو بالأحرف الأولى.","يمكن لأولياء الأمور إرسال الرأي نيابة عن أطفالهم."])
+ ["Below is real feedback from a student, published with her permission. We only show real feedback from real students, and we do not add or edit reviews.","If you have studied with Mohamed Nasser, you are welcome to send honest feedback to "+EMAIL+". With your written permission, selected feedback may be shown here with your name or initials.","Parents can send feedback on behalf of children."],
+ ["هذا رأي حقيقي من إحدى الطالبات، منشور بموافقتها. نعرض فقط آراء حقيقية من طلاب حقيقيين ولا نضيف آراء ولا نعدّلها.","إذا درست مع محمد ناصر يسعدنا أن ترسل رأيك الصادق إلى "+EMAIL+". وبموافقتك المكتوبة قد يظهر جزء من رأيك هنا باسمك أو بالأحرف الأولى.","يمكن لأولياء الأمور إرسال الرأي نيابة عن أطفالهم."])
 ART["maqam-basics-for-beginners"]=("Arabic Maqam Basics for Beginners","أساسيات المقامات العربية للمبتدئين","Arabic maqam basics for beginners","أساسيات المقامات العربية للمبتدئين",
  "A short beginner guide to Arabic maqam: what a maqam is, quarter tones, and three maqamat to hear first (Rast, Bayati and Hijaz).","دليل مختصر للمبتدئين عن المقام العربي: ما هو المقام، وأرباع الدرجات، وثلاثة مقامات للبدء بسماعها (راست وبياتي وحجاز).",
  ["A maqam is a set of notes with its own rules for how a melody starts, moves and ends. It is the base of much Arabic music, in the same way that major and minor scales are the base of much Western music.","Many maqamat use quarter tones, notes that sit between two piano keys. This is why an oud or a voice can play them and a standard piano cannot play them exactly.","Three maqamat to hear first: Rast, which sounds bright and open; Bayati, which sounds warm and is very common in songs; and Hijaz, which has a wide step that gives it a strong, dramatic sound.","A simple way to start: listen to a song in one maqam several times, hum the first phrase, then find the starting note on an oud or a keyboard. A teacher can check your intonation and show you how the maqam moves.","To start lessons, email "+EMAIL+" with your level and your country."],
@@ -340,6 +340,11 @@ def page(slug,l):
         extra_html+=f'<h2>{LBL["lessons"]}</h2>'+lst_(SERVICES)
         extra_html+=f'<h2>{LBL["country"]}</h2>'+lst_(GEO)
         extra_html+=f'<h2>{LBL["blog"]}</h2>'+lst_(ART)
+    if slug=="testimonials":
+        _rv="مستر محمد بجد جامد جداً ❤️<br>أنا مكنتش متوقعة إني أتحسن بالشكل ده في الغناء، وطريقته في الشرح مريحة جداً وشاطر اوي وصاحبي جدا دلوقتي<br>وأحلى حاجة إنه بيقولك إيه غلط وازاي تصلحه في ثواني<br>بجد احلى مستر في الدنيا 🤩"
+        _tr="Mister Mohamed is really great. I did not expect to improve this much in singing. His way of explaining is very comfortable, he is very good, and he is a real friend now. The best part is that he tells you what is wrong and how to fix it in seconds. Honestly the best teacher in the world."
+        extra_html+='<blockquote lang="ar" dir="rtl" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_rv+'<footer style="margin-top:.5rem;font-size:.85em;opacity:.8">'+("أميرة، مصر" if ar else "Amira, Egypt")+'</footer></blockquote>'
+        if not ar: extra_html+='<p><em>English translation: '+html.escape(_tr)+'</em></p>'
     if slug=="blog": extra_html+=lst_(ART)
     if slug in SERVICES and slug not in("index",):
         rel=[k for k in ART][:3]; extra_html+=f'<h2>{LBL["more"]}</h2>'+lst_(rel)
