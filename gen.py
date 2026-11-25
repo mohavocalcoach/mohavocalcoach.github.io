@@ -346,6 +346,11 @@ def page(slug,l):
         for _rv,_ne,_na,_tr in _revs:
             extra_html+='<blockquote lang="ar" dir="rtl" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_rv+'<cite style="display:block;margin-top:.5rem;font-size:.85em;opacity:.8;font-style:normal">'+(_na if ar else _ne)+'</cite></blockquote>'
             if not ar: extra_html+='<p><em>English translation: '+html.escape(_tr)+'</em></p>'
+    if slug=="testimonials":
+        _en="Honestly, I’ve enjoyed every single vocal lesson with Mohamed<br>He’s super friendly, patient, and always makes you feel comfortable, even when you mess things up 😂<br>I’ve learned so much and feel way more confident with my voice now<br>Thank you,<br>Mr. Mohamed 🫶<br>You’re the best ❤️"
+        _ar_tr="بصراحة، استمتعت بكل درس صوت مع محمد. هو ودود جداً وصبور ويشعرك دائماً بالراحة حتى عندما تخطئ. تعلمت كثيراً وأشعر الآن بثقة أكبر بكثير في صوتي. شكراً لك يا مستر محمد، أنت الأفضل."
+        extra_html+='<blockquote lang="en" dir="ltr" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_en+'<cite style="display:block;margin-top:.5rem;font-size:.85em;opacity:.8;font-style:normal">'+("باسكال، إنجلترا" if ar else "Pascal, England")+'</cite></blockquote>'
+        if ar: extra_html+='<p><em>ترجمة إلى العربية: '+_ar_tr+'</em></p>'
     if slug=="blog": extra_html+=lst_(ART)
     if slug in SERVICES and slug not in("index",):
         rel=[k for k in ART][:3]; extra_html+=f'<h2>{LBL["more"]}</h2>'+lst_(rel)
