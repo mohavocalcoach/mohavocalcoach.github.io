@@ -102,7 +102,92 @@ GEO={
   ["Mohamed Nasser teaches one-to-one music lessons over video call to students in any country. There is no studio or branch: all lessons are online.","International rate: $20 per hour. Gulf rate: 50 AED or 50 SAR per hour. Egypt rate: 600 EGP per hour. If you live in Kuwait, Qatar, Bahrain or Oman, email to confirm the rate in your currency.","Students in Kuwait, Qatar, Bahrain, Oman, the UK, the USA, Canada, Australia and Europe can choose a lesson time that fits their time zone, since lessons are available every day.","Subjects: vocal coaching and singing, piano, oud, guitar, drums and music theory, for children and adults, beginner to advanced. To book, email "+EMAIL+" with the subject, your level and your country."],
   ["يدرّس محمد ناصر دروس موسيقى فردية عبر مكالمة فيديو لطلاب في أي دولة. لا يوجد استوديو أو فرع: كل الدروس أونلاين.","السعر الدولي: 20 دولاراً للساعة. سعر الخليج: 50 درهماً أو 50 ريالاً للساعة. سعر مصر: 600 جنيه للساعة. إذا كنت في الكويت أو قطر أو البحرين أو عُمان راسلنا لتأكيد السعر بعملتك.","يمكن للطلاب في الكويت وقطر والبحرين وعُمان وبريطانيا وأمريكا وكندا وأستراليا وأوروبا اختيار وقت الدرس المناسب لتوقيتهم لأن الدروس متاحة كل يوم.","المواد: تدريب صوتي وغناء وبيانو وعود وجيتار ودرامز ونظرية موسيقية، للأطفال والكبار من المبتدئ إلى المتقدم. للحجز راسل "+EMAIL+" واذكر المادة ومستواك وبلدك."]),
 }
-REDIR={"online-music-lessons-kuwait":"online-music-lessons-worldwide","online-music-lessons-qatar":"online-music-lessons-worldwide","online-music-lessons-uk":"online-music-lessons-worldwide","online-music-lessons-usa":"online-music-lessons-worldwide"}
+REDIR={}
+def _c(en_c,ar_c,desc_en,desc_ar,be,ba):
+    return (f"Online Music Lessons in {en_c}",f"دروس موسيقى أونلاين في {ar_c}",f"Online singing and music lessons for students in {en_c}",f"دروس غناء وموسيقى أونلاين للطلاب في {ar_c}",desc_en,desc_ar,be,ba)
+_BK_EN="To book, email "+EMAIL+" with the subject, your level and your country. Lessons are online only: there is no studio or branch."
+_BK_AR="للحجز راسل "+EMAIL+" واذكر المادة ومستواك وبلدك. الدروس أونلاين فقط ولا يوجد استوديو أو فرع."
+GEO["online-music-lessons-kuwait"]=_c("Kuwait","الكويت","Online singing, piano, oud and guitar lessons for students in Kuwait, with lesson times that match Kuwait time (UTC+3).","دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في الكويت بمواعيد تناسب توقيت الكويت (UTC+3).",
+ ["Students in Kuwait can take one-to-one lessons with Mohamed Nasser over video call, in Arabic or English.",
+  "Time: Kuwait is on UTC+3 all year and does not change its clocks. Cairo is on UTC+2 in winter, so Kuwait is one hour ahead of Cairo from late October to late April, and the same time as Cairo during Egyptian summer time. A lesson at 8 PM in Kuwait in winter is 7 PM in Cairo.",
+  "Price: the international rate is $20 per hour. There is no published rate in Kuwaiti dinars yet, so email to confirm the amount in your currency before the first lesson.",
+  "What students can work on: Arabic and Gulf songs they already love, oud and maqam basics, piano or guitar from the first lesson, and voice care for school or choir singers. Bring a song, a recording or a goal and the lesson plan starts from there.",
+  _BK_EN],
+ ["يمكن للطلاب في الكويت أخذ دروس فردية مع محمد ناصر عبر مكالمة فيديو بالعربية أو الإنجليزية.",
+  "التوقيت: الكويت على UTC+3 طوال العام ولا تغيّر ساعتها. القاهرة على UTC+2 في الشتاء، فالكويت تسبق القاهرة بساعة من أواخر أكتوبر إلى أواخر أبريل، وتتطابق معها خلال التوقيت الصيفي في مصر. الدرس الساعة 8 مساءً بتوقيت الكويت شتاءً يوافق 7 مساءً بتوقيت القاهرة.",
+  "السعر: السعر الدولي 20 دولاراً للساعة. لا يوجد سعر منشور بالدينار الكويتي حالياً، فراسلنا لتأكيد المبلغ بعملتك قبل الدرس الأول.",
+  "ما الذي يمكنك التدرب عليه: أغانٍ عربية وخليجية تحبها، وأساسيات العود والمقامات، والبيانو أو الجيتار من أول درس، والعناية بالصوت لمن يغني في المدرسة أو الكورال. أحضر أغنية أو تسجيلاً أو هدفاً وتبدأ الخطة منه.",
+  _BK_AR])
+GEO["online-music-lessons-qatar"]=_c("Qatar","قطر","Online singing, piano, oud and guitar lessons for students in Qatar, scheduled in Qatar time (UTC+3), in Arabic or English.","دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في قطر بتوقيت قطر (UTC+3) بالعربية أو الإنجليزية.",
+ ["Students in Qatar can learn singing and instruments one-to-one over video call with Mohamed Nasser.",
+  "Time: Qatar is on UTC+3 all year. It is one hour ahead of Cairo in winter and the same as Cairo in Egyptian summer time. Because lessons run every day, families can book after school or after work, including weekends.",
+  "Price: the international rate is $20 per hour. A rate in Qatari riyals is not published yet, so email to confirm the amount in your currency.",
+  "Expat families: many students in Qatar attend international schools. Mohamed has taught in international schools, so he is used to students who switch between English and Arabic in the same lesson. Lessons can follow the school music syllabus a child already has: share it by email.",
+  _BK_EN],
+ ["يمكن للطلاب في قطر تعلم الغناء والآلات بدروس فردية عبر مكالمة فيديو مع محمد ناصر.",
+  "التوقيت: قطر على UTC+3 طوال العام، فهي تسبق القاهرة بساعة في الشتاء وتتطابق معها في التوقيت الصيفي المصري. وبما أن الدروس متاحة كل يوم يمكن للعائلات الحجز بعد المدرسة أو بعد العمل، ويشمل ذلك نهاية الأسبوع.",
+  "السعر: السعر الدولي 20 دولاراً للساعة. لا يوجد سعر منشور بالريال القطري حالياً، فراسلنا لتأكيد المبلغ بعملتك.",
+  "العائلات المقيمة: كثير من الطلاب في قطر يدرسون في مدارس دولية. درّس محمد في مدارس دولية فهو معتاد على طلاب ينتقلون بين الإنجليزية والعربية في الدرس الواحد. يمكن أن يتبع الدرس منهج الموسيقى المدرسي الذي يدرسه الطفل: أرسله بالبريد.",
+  _BK_AR])
+GEO["online-music-lessons-uk"]=_c("the UK","بريطانيا","Online singing, piano, oud and guitar lessons for students in the UK, with times that work around UK time (GMT and BST).","دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في بريطانيا بمواعيد تناسب توقيت بريطانيا (GMT وBST).",
+ ["Students in the UK can take one-to-one music lessons with Mohamed Nasser over video call, in English or Arabic.",
+  "Time: the UK is on GMT (UTC+0) in winter and BST (UTC+1) in summer. Cairo is two hours ahead of the UK in winter. The gap changes in spring and autumn because the UK and Egypt switch clocks on different dates, so always confirm a lesson time in your own local time when you book. A 6 PM lesson in London in winter is 8 PM in Cairo.",
+  "Price: the international rate is $20 per hour. Email to confirm the amount in pounds before the first lesson.",
+  "Who it suits: Arab families in the UK who want children to learn oud or Arabic songs in Arabic, adults who want to learn piano or guitar in the evening, and singers preparing for auditions or choir. If you follow a graded syllabus such as ABRSM or Trinity, send it by email and ask whether the lessons fit.",
+  _BK_EN],
+ ["يمكن للطلاب في بريطانيا أخذ دروس موسيقى فردية مع محمد ناصر عبر مكالمة فيديو بالإنجليزية أو العربية.",
+  "التوقيت: بريطانيا على GMT (UTC+0) شتاءً وعلى BST (UTC+1) صيفاً. القاهرة تسبق بريطانيا بساعتين في الشتاء. يتغير الفارق في الربيع والخريف لأن البلدين يغيّران الساعة في تواريخ مختلفة، فأكّد دائماً موعد الدرس بتوقيتك المحلي عند الحجز. الدرس الساعة 6 مساءً في لندن شتاءً يوافق 8 مساءً بتوقيت القاهرة.",
+  "السعر: السعر الدولي 20 دولاراً للساعة. راسلنا لتأكيد المبلغ بالجنيه الإسترليني قبل الدرس الأول.",
+  "لمن تناسب: العائلات العربية في بريطانيا التي تريد أن يتعلم أبناؤها العود أو الأغاني العربية بالعربية، والبالغون الذين يريدون تعلم البيانو أو الجيتار مساءً، والمغنون الذين يستعدون لاختبار أو كورال. إذا كنت تتبع منهجاً بدرجات مثل ABRSM أو Trinity أرسله بالبريد واسأل إن كانت الدروس تناسبه.",
+  _BK_AR])
+GEO["online-music-lessons-usa"]=_c("the USA","أمريكا","Online singing, piano, oud and guitar lessons for students in the USA, with times for Eastern, Central and Pacific time, priced in US dollars.","دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في أمريكا بمواعيد للتوقيت الشرقي والأوسط والباسيفيكي وبالدولار الأمريكي.",
+ ["Students in the USA can take one-to-one lessons with Mohamed Nasser over video call, in English or Arabic.",
+  "Price: lessons cost $20 per hour. This is the standard international rate, so there is no currency conversion.",
+  "Time: the USA has several time zones. In winter Cairo is 7 hours ahead of Eastern time, 8 ahead of Central, and 10 ahead of Pacific. So a 4 PM lesson in New York is 11 PM in Cairo, while 9 AM in Los Angeles is 7 PM in Cairo. The US and Egypt change clocks on different dates, so the gap shifts by an hour for a few weeks each spring and autumn. Confirm each time in your local time zone.",
+  "Practical fit: weekday mornings and midday in the US are evening in Cairo, which suits adults and homeschooled children. For students in school, weekend lessons are easier to plan. Singers can use a lesson to prepare a song for an audition, and beginners can start piano or guitar with no instrument background.",
+  _BK_EN],
+ ["يمكن للطلاب في أمريكا أخذ دروس فردية مع محمد ناصر عبر مكالمة فيديو بالإنجليزية أو العربية.",
+  "السعر: الدرس 20 دولاراً للساعة. هذا هو السعر الدولي المعتمد فلا توجد حاجة لتحويل عملة.",
+  "التوقيت: في أمريكا عدة مناطق زمنية. في الشتاء تسبق القاهرة التوقيت الشرقي بـ7 ساعات والأوسط بـ8 والباسيفيكي بـ10. فالدرس الساعة 4 عصراً في نيويورك يوافق 11 مساءً بالقاهرة، والساعة 9 صباحاً في لوس أنجلوس تساوي 7 مساءً بالقاهرة. تغيّر أمريكا ومصر الساعة في تواريخ مختلفة فيتغير الفارق ساعة لبضعة أسابيع كل ربيع وخريف. أكّد كل موعد بتوقيتك المحلي.",
+  "ما يناسبك عملياً: صباح أيام الأسبوع وظهرها في أمريكا مساء في القاهرة، وهذا يناسب البالغين والأطفال الذين يدرسون في المنزل. أما طلاب المدارس فدروس نهاية الأسبوع أسهل في التنظيم. يمكن للمغنين التحضير لأغنية اختبار، ويمكن للمبتدئين البدء بالبيانو أو الجيتار بلا خلفية موسيقية.",
+  _BK_AR])
+GEO["online-music-lessons-canada"]=_c("Canada","كندا","Online singing, piano, oud and guitar lessons for students in Canada, with times for Eastern, Central and Pacific zones, in English or Arabic.","دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في كندا بمواعيد للتوقيت الشرقي والأوسط والباسيفيكي بالإنجليزية أو العربية.",
+ ["Students in Canada can take one-to-one lessons with Mohamed Nasser over video call. Lessons are taught in English or Arabic; they are not taught in French.",
+  "Price: the international rate is $20 per hour. Email to confirm the amount in Canadian dollars before the first lesson.",
+  "Time: in winter Cairo is 7 hours ahead of Toronto and Montreal (Eastern), 8 ahead of Winnipeg (Central), 9 ahead of Calgary (Mountain) and 10 ahead of Vancouver (Pacific). A 5 PM lesson in Toronto is midnight in Cairo, so Canadian students usually book earlier in the day or on weekends. Clock changes in Canada and Egypt fall on different dates, so confirm in your local time.",
+  "Who it suits: families in Canadian cities with Arabic-speaking communities who want oud, Arabic singing or maqam basics in Arabic, and any student who prefers English for piano, guitar, drums or music theory.",
+  _BK_EN],
+ ["يمكن للطلاب في كندا أخذ دروس فردية مع محمد ناصر عبر مكالمة فيديو. الدروس بالإنجليزية أو العربية ولا تُقدَّم بالفرنسية.",
+  "السعر: السعر الدولي 20 دولاراً للساعة. راسلنا لتأكيد المبلغ بالدولار الكندي قبل الدرس الأول.",
+  "التوقيت: في الشتاء تسبق القاهرة تورنتو ومونتريال (الشرقي) بـ7 ساعات، وونيبيغ (الأوسط) بـ8، وكالغاري (الجبلي) بـ9، وفانكوفر (الباسيفيكي) بـ10. الدرس الساعة 5 عصراً في تورنتو يوافق منتصف الليل بالقاهرة، لذلك يحجز الطلاب في كندا غالباً في وقت مبكر من اليوم أو في نهاية الأسبوع. تتغير الساعة في كندا ومصر في تواريخ مختلفة فأكّد الموعد بتوقيتك المحلي.",
+  "لمن تناسب: العائلات في المدن الكندية ذات الجاليات الناطقة بالعربية التي تريد العود أو الغناء العربي أو أساسيات المقامات بالعربية، وأي طالب يفضل الإنجليزية في البيانو والجيتار والدرامز والنظرية الموسيقية.",
+  _BK_AR])
+GEO["online-music-lessons-australia"]=_c("Australia","أستراليا","Online singing, piano, oud and guitar lessons for students in Australia, with times that bridge Sydney, Melbourne, Brisbane and Perth to Cairo.","دروس غناء وبيانو وعود وجيتار أونلاين للطلاب في أستراليا بمواعيد تربط سيدني وملبورن وبريسبان وبيرث بالقاهرة.",
+ ["Students in Australia can take one-to-one lessons with Mohamed Nasser over video call, in English or Arabic.",
+  "Time is the main thing to plan. Australia is far ahead of Cairo. In the Cairo winter Sydney and Melbourne are on summer time (UTC+11) and are 9 hours ahead of Cairo; Brisbane (UTC+10, no clock change) is 8 ahead; Perth (UTC+8, no clock change) is 6 ahead. So 6 PM in Sydney is 9 AM in Cairo, and 5 PM in Perth is 11 AM in Cairo. The gap changes by an hour or two in the Australian winter, so confirm each time in your local time.",
+  "Price: the international rate is $20 per hour. Email to confirm the amount in Australian dollars before the first lesson.",
+  "Practical fit: Australian evenings and weekends are Cairo morning and midday, which is a good time for lessons. After-school and after-work slots work well, including adults who want to start piano, guitar or singing.",
+  _BK_EN],
+ ["يمكن للطلاب في أستراليا أخذ دروس فردية مع محمد ناصر عبر مكالمة فيديو بالإنجليزية أو العربية.",
+  "التوقيت هو الأهم في التخطيط. أستراليا متقدمة كثيراً على القاهرة. في شتاء القاهرة تكون سيدني وملبورن على التوقيت الصيفي (UTC+11) وتسبقان القاهرة بـ9 ساعات، وبريسبان (UTC+10 بلا تغيير ساعة) بـ8 ساعات، وبيرث (UTC+8 بلا تغيير ساعة) بـ6 ساعات. فالساعة 6 مساءً في سيدني تساوي 9 صباحاً في القاهرة، والساعة 5 عصراً في بيرث تساوي 11 صباحاً في القاهرة. يتغير الفارق بساعة أو ساعتين في الشتاء الأسترالي فأكّد كل موعد بتوقيتك المحلي.",
+  "السعر: السعر الدولي 20 دولاراً للساعة. راسلنا لتأكيد المبلغ بالدولار الأسترالي قبل الدرس الأول.",
+  "ما يناسبك عملياً: مساء أستراليا ونهاية أسبوعها هما صباح القاهرة وظهرها، وهذا وقت مناسب للدروس. تعمل مواعيد ما بعد المدرسة وما بعد العمل جيداً، ومنها للبالغين الذين يريدون البدء بالبيانو أو الجيتار أو الغناء.",
+  _BK_AR])
+# extra distinct paragraph for the three existing country pages
+GEO["online-music-lessons-egypt"][6].insert(2,"Time: Egypt is on UTC+2 in winter and UTC+3 during Egyptian summer time, and lessons use Cairo time. Evening and weekend slots are easiest for school students; the rate is paid in Egyptian pounds.")
+GEO["online-music-lessons-egypt"][7].insert(2,"التوقيت: مصر على UTC+2 شتاءً وUTC+3 خلال التوقيت الصيفي، والدروس بتوقيت القاهرة. مواعيد المساء ونهاية الأسبوع أسهل لطلاب المدارس، والسعر بالجنيه المصري.")
+GEO["online-music-lessons-saudi-arabia"][6].insert(2,"Saudi time is the same as Cairo during Egyptian summer time and one hour ahead of Cairo in winter. A 9 PM lesson in Riyadh in winter is 8 PM in Cairo. Weekend slots are easy to arrange.")
+GEO["online-music-lessons-saudi-arabia"][7].insert(2,"توقيت السعودية يطابق القاهرة في التوقيت الصيفي المصري ويسبقها بساعة في الشتاء. الدرس الساعة 9 مساءً في الرياض شتاءً يوافق 8 مساءً بالقاهرة. ومواعيد نهاية الأسبوع سهلة الترتيب.")
+GEO["online-music-lessons-uae"][6].insert(2,"UAE time (UTC+4) is two hours ahead of Cairo in winter and one hour ahead during Egyptian summer time. A 7 PM lesson in Dubai in winter is 5 PM in Cairo. Many families in the UAE choose weekend slots.")
+GEO["online-music-lessons-uae"][7].insert(2,"توقيت الإمارات (UTC+4) يسبق القاهرة بساعتين شتاءً وبساعة في التوقيت الصيفي المصري. الدرس الساعة 7 مساءً في دبي شتاءً يوافق 5 عصراً بالقاهرة. وتختار كثير من العائلات في الإمارات مواعيد نهاية الأسبوع.")
+GEOFAQ={
+"online-music-lessons-kuwait":[("What time zone are Kuwait lessons in?","Kuwait time (UTC+3, no daylight saving). In winter that is one hour ahead of Cairo.","بأي توقيت دروس الكويت؟","بتوقيت الكويت (UTC+3 بلا توقيت صيفي). في الشتاء يسبق القاهرة بساعة."),("What is the price in Kuwait?","$20 per hour. Email to confirm the amount in Kuwaiti dinars.","كم السعر في الكويت؟","20 دولاراً للساعة. راسلنا لتأكيد المبلغ بالدينار الكويتي.")],
+"online-music-lessons-qatar":[("Can my child follow their school music syllabus?","Send the syllabus by email and we will discuss how the lessons can support it.","هل يمكن لطفلي اتباع منهج المدرسة؟","أرسل المنهج بالبريد ونناقش كيف تدعمه الدروس."),("What is the price in Qatar?","$20 per hour. Email to confirm the amount in Qatari riyals.","كم السعر في قطر؟","20 دولاراً للساعة. راسلنا لتأكيد المبلغ بالريال القطري.")],
+"online-music-lessons-uk":[("How do I handle GMT and BST?","Always confirm the lesson in UK local time when you book, because the UK and Egypt change clocks on different dates.","كيف أتعامل مع GMT وBST؟","أكّد الموعد بتوقيت بريطانيا المحلي عند الحجز لأن البلدين يغيّران الساعة في تواريخ مختلفة."),("Do you prepare students for ABRSM or Trinity exams?","Send your syllabus by email and ask. We will tell you honestly whether the lessons fit it.","هل تجهّز الطلاب لاختبارات ABRSM أو Trinity؟","أرسل المنهج بالبريد واسأل. سنخبرك بصدق إن كانت الدروس تناسبه.")],
+"online-music-lessons-usa":[("Which US time zones work best?","Morning and midday in the US is evening in Cairo, so Eastern and Central students find it easiest. Pacific students can use mornings or weekends.","أي توقيت أمريكي أنسب؟","صباح أمريكا وظهرها مساء في القاهرة فالتوقيت الشرقي والأوسط أسهل. وطلاب الباسيفيكي يمكنهم الصباح أو نهاية الأسبوع."),("Is the price in US dollars?","Yes, $20 per hour with no conversion.","هل السعر بالدولار؟","نعم، 20 دولاراً للساعة بلا تحويل.")],
+"online-music-lessons-canada":[("Are lessons available in French?","No. Lessons are in English or Arabic.","هل الدروس بالفرنسية؟","لا. الدروس بالإنجليزية أو العربية."),("Which Canadian time zones work best?","Eastern is 7 hours behind Cairo in winter, so book earlier in the day or on weekends. Check your own time zone when you book.","أي توقيت كندي أنسب؟","التوقيت الشرقي يتأخر 7 ساعات عن القاهرة شتاءً، فاحجز في وقت مبكر من اليوم أو في نهاية الأسبوع.")],
+"online-music-lessons-australia":[("What lesson time works from Sydney or Melbourne?","Evenings and weekends in Sydney are morning and midday in Cairo. In the Cairo winter, 6 PM in Sydney is 9 AM in Cairo.","ما الوقت المناسب من سيدني أو ملبورن؟","مساء سيدني ونهاية أسبوعها هما صباح القاهرة وظهرها. في شتاء القاهرة الساعة 6 مساءً في سيدني تساوي 9 صباحاً بالقاهرة."),("Is the price in Australian dollars?","The rate is $20 per hour. Email to confirm the amount in Australian dollars.","هل السعر بالدولار الأسترالي؟","السعر 20 دولاراً للساعة. راسلنا لتأكيد المبلغ بالدولار الأسترالي.")],
+}
 ART={
 "how-to-warm-up-your-voice":("How to Warm Up Your Voice Before Singing","كيف تسخّن صوتك قبل الغناء","How to warm up your voice before singing","كيف تسخّن صوتك قبل الغناء",
  "A simple vocal warm-up routine: breathing, lip trills, humming and gentle scales before you sing.","روتين بسيط لتسخين الصوت: التنفس وتمرين الشفاه والهمهمة والسلالم الخفيفة قبل الغناء.",
@@ -208,6 +293,7 @@ def page(slug,l):
         "online-music-lessons-saudi-arabia":("What currency is the rate in?","The Gulf rate is 50 SAR per hour for students in Saudi Arabia.","بأي عملة السعر؟","سعر الخليج 50 ريالاً للساعة للطلاب في السعودية."),
         "online-music-lessons-uae":("What currency is the rate in?","The Gulf rate is 50 AED per hour for students in the UAE.","بأي عملة السعر؟","سعر الخليج 50 درهماً للساعة للطلاب في الإمارات."),
         "online-music-lessons-worldwide":("What if I live in Kuwait, Qatar, the UK or the USA?","Lessons are online, so you can book from anywhere. The international rate is $20 per hour. Email to confirm the rate in your currency.","ماذا لو كنت في الكويت أو قطر أو بريطانيا أو أمريكا؟","الدروس أونلاين فيمكنك الحجز من أي مكان. السعر الدولي 20 دولاراً للساعة. راسلنا لتأكيد السعر بعملتك.")}
+    if slug in GEOFAQ: FAQ=FAQ+[(x[2],x[3]) if ar else (x[0],x[1]) for x in GEOFAQ[slug]]
     if slug in RF: FAQ=FAQ+[(RF[slug][2],RF[slug][3])] if ar else FAQ+[(RF[slug][0],RF[slug][1])]
     show_faq = not is_art and slug not in ("blog","contact","testimonials")
     LBL=dict(book="احجز درساً" if ar else "Book a lesson", wa="واتساب" if ar else "WhatsApp", home="الرئيسية" if ar else "Home",
