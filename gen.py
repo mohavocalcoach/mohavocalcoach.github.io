@@ -301,13 +301,13 @@ def page(slug,l):
     WA="201203323162"  # WhatsApp number approved by the user for this website only
     is_art=slug in ART; is_geo=slug in GEO
     FAQ_EN=[("What lessons do you teach?","Vocal coaching and singing, piano, oud, guitar, drums and music theory."),
- ("Are the lessons online?","Yes. All lessons are one-to-one over video call. There is no studio or branch."),
+ ("Are the lessons online?","Yes, by video call. In-person lessons in Cairo, Egypt, by arrangement."),
  ("Who are the lessons for?","Children and adults, from complete beginners to advanced students and working singers."),
  ("How much do lessons cost?","From $20 per hour internationally, 600 EGP per hour in Egypt and 50 AED or SAR per hour in the Gulf."),
  ("How do I book a lesson?","Email "+EMAIL+" with the subject you want, your level and your country."),
  ("What is your experience?","10 years of teaching singing and instruments, teaching in international schools and working as an opera voice coach with singers and artists in Egypt and the Arab world.")]
     FAQ_AR=[("ما الدروس التي تقدمها؟","تدريب صوتي وغناء وبيانو وعود وجيتار ودرامز ونظرية موسيقية."),
- ("هل الدروس أونلاين؟","نعم. كل الدروس فردية عبر مكالمة فيديو. لا يوجد استوديو أو فرع."),
+ ("هل الدروس أونلاين؟","نعم، عبر مكالمة فيديو. وتتوفر دروس حضورية في القاهرة بمصر بالاتفاق."),
  ("لمن الدروس؟","للأطفال والكبار من المبتدئين تماماً إلى المتقدمين والمغنين المحترفين."),
  ("كم سعر الدرس؟","من 20 دولاراً للساعة دولياً، و600 جنيه للساعة في مصر، و50 درهماً أو ريالاً للساعة في الخليج."),
  ("كيف أحجز درساً؟","راسل "+EMAIL+" واذكر المادة ومستواك وبلدك."),
