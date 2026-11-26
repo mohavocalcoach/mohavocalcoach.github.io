@@ -36,3 +36,21 @@ def _fx(x):
     return x
 for _k in list(P): P[_k]=_fx(P[_k])
 GEOFAQ.update({k:_fx(v) for k,v in GEOFAQ.items()})
+# --- homepage/template wording: online plus in-person in Cairo by arrangement ---
+import builtins as _bi
+_RX2=_RX+[("<b>1:1</b> online lessons","<b>1:1</b> lessons, online and in Cairo"),
+("<b>1:1</b> دروس فردية أونلاين","<b>1:1</b> دروس فردية أونلاين وحضورية")]
+_oo=_bi.open
+class _HW:
+    def __init__(s,f): s.f=f
+    def write(s,t):
+        if isinstance(t,str):
+            for a,b in _RX2: t=_re.sub(a,b,t)
+        return s.f.write(t)
+    def __getattr__(s,n): return getattr(s.f,n)
+    def __enter__(s): s.f.__enter__(); return s
+    def __exit__(s,*a): return s.f.__exit__(*a)
+def _open(p,m="r",*a,**k):
+    f=_oo(p,m,*a,**k)
+    return _HW(f) if ("w" in m and str(p).endswith("index.html")) else f
+_bi.open=_open
