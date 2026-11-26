@@ -269,7 +269,7 @@ INK="7d7892c313eff9a71a2a4b558004188e"
 P.update(GEO); P.update(ART)
 exec(open("gen2.py",encoding="utf-8").read())
 SERVICES=[s for s in P if s not in("about","contact","blog","faq","testimonials") and s not in GEO and s not in ART]
-SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/share/1FFcQWyfV2/","https://mohavocalcoach.carrd.co",
+SAME=["https://www.instagram.com/moha_vocal_coach","https://www.tiktok.com/@moha_vocal_coach","https://www.facebook.com/mohavocalcoach","https://mohavocalcoach.carrd.co",
  "https://www.apprentus.com/en-us/private-lessons/online/music/singing/professional-vocal-coaching-singing-online","https://www.teacheron.com/tutor/f9BN","https://wantatutor.com/tutors/mohamed-nasser-2","https://tutorping.com/t/moha-vocal-coach","https://pluscourse.com/ar/profile/581-mohamed-nasser","https://profile.musicteacher.com/profile/mohavocalcoach/","https://contra.com/mohamed_nasser_95yfbfi7/work","https://www.freelancer.com/u/MohaVocalCoachEG","https://findmytutoruae.com/tutors/873"]
 PROFHTML=""
 PROFLBL={True:"ملفاتي على المنصات",False:"Also find me on"}
@@ -366,8 +366,9 @@ def page(slug,l):
         extra_html+='<blockquote lang="en" dir="ltr" style="border-inline-start:4px solid #c9a24b;margin:1.2rem 0;padding:.6rem 1rem;background:#faf6ec;font-size:1.1em">'+_en2+'<cite style="display:block;margin-top:.5rem;font-size:.85em;opacity:.8;font-style:normal">'+("إيميلي، أمريكا" if ar else "Emily, USA")+'</cite></blockquote>'
         if ar: extra_html+='<p><em>ترجمة إلى العربية: '+_ar_tr2+'</em></p>'
     if is_geo:
-        extra_html+=f'<h2>{LBL["lessons"]}</h2>'+lst_([k for k in ["singing-lessons","piano-lessons","oud-lessons","guitar-lessons"]+(["oud-teacher-egypt","piano-teacher-egypt","vocal-coach-egypt"] if slug[-5:]=="egypt" else []) if k in P])
+        extra_html+=f'<h2>{LBL["lessons"]}</h2>'+lst_(["singing-lessons","piano-lessons","oud-lessons","guitar-lessons"]+(["oud-teacher-egypt","piano-teacher-egypt","vocal-coach-egypt"] if slug[-5:]=="egypt" else []))
         extra_html+=f'<h2>{LBL["blog"]}</h2>'+lst_(["how-to-warm-up-your-voice","set-up-for-online-music-lessons","how-to-read-music-for-beginners"])
+    if slug[-5:]=="egypt": extra_html+='<p><a href="https://www.facebook.com/mohavocalcoach">Facebook</a></p>'
     if slug=="blog": extra_html+=lst_(ART)
     if slug in SERVICES and slug not in("index",):
         _vo=("singing" in slug or "vocal" in slug or "voice" in slug or slug=="music-lessons-for-adults")
@@ -379,7 +380,7 @@ def page(slug,l):
         _svc=["singing-lessons","vocal-coaching"] if slug in _vg else (["oud-lessons","music-theory"] if "maqam" in slug else ["piano-lessons","music-theory"])
         _grp=[k for k in ART if k in _vg] if slug in _vg else [k for k in ART if k not in _vg]
         extra_html+=f'<h2>{LBL["more"]}</h2>'+lst_([k for k in _grp if k!=slug][:3])
-        extra_html+=f'<h2>{LBL["lessons"]}</h2>'+lst_([k for k in _svc if k in P])
+        extra_html+=f'<h2>{LBL["lessons"]}</h2>'+lst_(_svc)
     if slug in("index","about"):
         meth=(["كل درس فردي ومبني على صوتك أو آلتك وأهدافك.","نبدأ بتسخين وهدف تقني واحد ثم نطبقه على قطعة أو أغنية تحبها.","تحصل على ملاحظات واضحة وتمرين قصير للأسبوع."] if ar else
  ["Every lesson is one-to-one and built around your voice or instrument and your goals.","Each lesson starts with a warm-up and one technical goal, then applies it to a piece or song you like.","You leave with clear feedback and a short practice plan for the week."])
