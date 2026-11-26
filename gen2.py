@@ -39,7 +39,8 @@ GEOFAQ.update({k:_fx(v) for k,v in GEOFAQ.items()})
 # --- homepage/template wording: online plus in-person in Cairo by arrangement ---
 import builtins as _bi
 _RX2=_RX+[("<b>1:1</b> online lessons","<b>1:1</b> lessons, online and in Cairo"),
-("<b>1:1</b> دروس فردية أونلاين","<b>1:1</b> دروس فردية أونلاين وحضورية")]
+("<b>1:1</b> دروس فردية أونلاين","<b>1:1</b> دروس فردية أونلاين وحضورية"),
+(_re.escape("nav a{margin-inline-end:1rem;font-size:.95rem}"),"nav a{margin-inline-end:.8rem;font-size:.95rem;white-space:nowrap}@media(max-width:480px){nav{display:flex;flex-wrap:wrap;gap:.35rem .9rem}nav a{margin:0}}")]
 _oo=_bi.open
 class _HW:
     def __init__(s,f): s.f=f
