@@ -54,6 +54,14 @@ def _name_pref(t):
             p=p.replace("Mohamed Nasser (Moha Vocal Coach)","Moha").replace("Mohamed Nasser","Moha")
         parts[i]=p
     return "".join(parts)
+def _interlink(t):
+    # Second official site (Moha's Cloudflare Pages site), linked both ways as the same person and brand.
+    if "<html" not in t or "moha-vocal-coach.pages.dev" in t: return t
+    ar='<html lang="ar"' in t
+    t=t.replace('"sameAs": [','"sameAs": ["https://moha-vocal-coach.pages.dev/", ',1)
+    lab="الموقع الرسمي الثاني" if ar else "Second official site"
+    t=t.replace('<p style="font-size:.85em">','<p style="font-size:.85em">'+lab+': <a href="https://moha-vocal-coach.pages.dev/'+("ar" if ar else "")+'" rel="me">moha-vocal-coach.pages.dev</a></p><p style="font-size:.85em">',1)
+    return t
 _oo=_bi.open
 class _HW:
     def __init__(s,f): s.f=f
@@ -61,6 +69,7 @@ class _HW:
         if isinstance(t,str):
             for a,b in _RX2: t=_re.sub(a,b,t)
             t=_name_pref(t)
+            t=_interlink(t)
         return s.f.write(t)
     def __getattr__(s,n): return getattr(s.f,n)
     def __enter__(s): s.f.__enter__(); return s
