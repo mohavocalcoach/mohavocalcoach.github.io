@@ -41,12 +41,26 @@ import builtins as _bi
 _RX2=_RX+[("<b>1:1</b> online lessons","<b>1:1</b> lessons, online and in Cairo"),
 ("<b>1:1</b> دروس فردية أونلاين","<b>1:1</b> دروس فردية أونلاين وحضورية"),
 (_re.escape("nav a{margin-inline-end:1rem;font-size:.95rem}"),"nav a{margin-inline-end:.8rem;font-size:.95rem;white-space:nowrap}@media(max-width:480px){nav{display:flex;flex-wrap:wrap;gap:.35rem .9rem}nav a{margin:0}}")]
+def _name_pref(t):
+    # Moha's rule: Arabic pages say محمد ناصر, English pages say Moha. JSON-LD is left as is.
+    if "<html" not in t: return t
+    ar='<html lang="ar"' in t
+    parts=_re.split(r'(<script type="application/ld\+json">.*?</script>)',t,flags=_re.S)
+    for i,p in enumerate(parts):
+        if p.startswith('<script type="application/ld+json">'): continue
+        if ar:
+            p=p.replace("محمد ناصر (موها فوكال كوتش)","محمد ناصر").replace("موها فوكال كوتش","محمد ناصر")
+        else:
+            p=p.replace("Mohamed Nasser (Moha Vocal Coach)","Moha").replace("Mohamed Nasser","Moha")
+        parts[i]=p
+    return "".join(parts)
 _oo=_bi.open
 class _HW:
     def __init__(s,f): s.f=f
     def write(s,t):
         if isinstance(t,str):
             for a,b in _RX2: t=_re.sub(a,b,t)
+            t=_name_pref(t)
         return s.f.write(t)
     def __getattr__(s,n): return getattr(s.f,n)
     def __enter__(s): s.f.__enter__(); return s
