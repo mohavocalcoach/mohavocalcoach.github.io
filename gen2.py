@@ -144,3 +144,10 @@ ART["building-a-weekly-practice-plan-for-music-students"]=("Building a Weekly Pr
  ["Progress comes from a plan you can keep. Most intermediate students practise what they enjoy and skip what is hard. A weekly plan fixes that.","Choose one main goal for the week, for example one passage, one technique or one song section. Write it down.","Split each session into three parts: a short warm-up, work on the goal at a slow tempo, and some time on music you enjoy. Twenty to forty minutes a day is enough for most students.","Give each day a small focus: rhythm on one day, tone on another, and so on. Leave one day for review, when you play through everything and record yourself.","At the end of the week compare the recording with last week's. Keep what worked and change what did not. A teacher can set the goal, check your progress and adjust the plan. Lessons are online, and in person in Cairo by arrangement. Email "+EMAIL+" to book."],
  ["التقدم يأتي من خطة تستطيع الالتزام بها. معظم الطلاب متوسطي المستوى يتدربون على ما يحبون ويتركون ما هو صعب. الخطة الأسبوعية تحلّ ذلك.","اختر هدفاً رئيسياً واحداً للأسبوع، مثل مقطع واحد أو تقنية واحدة أو جزء من أغنية. اكتبه.","قسّم كل جلسة إلى ثلاثة أجزاء: تسخين قصير، وعمل على الهدف ببطء، ووقت على موسيقى تحبها. عشرون إلى أربعون دقيقة يومياً تكفي معظم الطلاب.","أعطِ كل يوم تركيزاً صغيراً: الإيقاع في يوم والصوت في يوم آخر وهكذا. اترك يوماً للمراجعة تعزف فيه كل شيء وتسجّل نفسك.","في نهاية الأسبوع قارن التسجيل بتسجيل الأسبوع الماضي. احتفظ بما نجح وغيّر ما لم ينجح. يستطيع المدرس تحديد الهدف ومتابعة تقدمك وتعديل الخطة. الدروس أونلاين، وحضورية في القاهرة بالاتفاق. راسل "+EMAIL+" للحجز."])
 P["building-a-weekly-practice-plan-for-music-students"]=ART["building-a-weekly-practice-plan-for-music-students"]
+
+import atexit
+def _sm2():
+    s=open("sitemap.xml",encoding="utf-8").read()
+    open("sitemap-pages.xml","w",encoding="utf-8").write(s)
+    open("robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\nSitemap: {BASE}/sitemap-pages.xml\n")
+atexit.register(_sm2)
